@@ -1,0 +1,19 @@
+<app-user></app-user>
+<br>
+<form [formGroup]="deleteForm" class="example-form">
+
+    <div fxLayoutAlign="center center">
+        <table border="1" class="a">
+            <mat-form-field fxFlexFill fxLayoutAlign="center center">
+                <mat-label class="color">User Id</mat-label>
+                <input matInput type="number" formControlName="id">
+            </mat-form-field>
+
+            <div fxFlexFill fxLayoutAlign="center center">
+                <button mat-raised-button color="accent" (click)="submitForm()">Dekete</button>
+            </div>
+        </table>
+    </div>
+
+
+</form>
