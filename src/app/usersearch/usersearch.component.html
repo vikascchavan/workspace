@@ -1,0 +1,52 @@
+<div class="body">
+  <app-user></app-user>
+  <div fxLayoutAlign="center center" fxLayoutGap="20%">
+    <form [formGroup]="searchForm">
+      <b>
+        <h1>Search User</h1>
+      </b><br />
+      <div fxLayoutGap="40px">
+        <input type="text" formControlName="searchid" />
+        <button (click)="getSingle()">Get user</button>
+        <button (click)="getMultiple()">Get All user</button>
+        <br /><br />
+      </div>
+    </form>
+  </div>
+  <br /><br />
+  <table border="1" align="center">
+    <tr>
+      <td align="center">ID</td>
+      <td align="center">FIRST NAME</td>
+      <td align="center">LAST NAME</td>
+      <td align="center">EMAIL</td>
+      <td align="center">CONTACT</td>
+      <td align="center">ROLE</td>
+
+
+    </tr>
+    <tr *ngFor="let object of dataSource">
+      <td align="center">{{object.id}}</td>
+      <td align="center">{{object.first_name}}</td>
+      <td align="center">{{object.last_name}}</td>
+      <td align="center">{{object.email}}</td>
+      <td align="center">{{object.contact_number}}</td>
+      <td align="center">{{object.role}}</td>
+
+    </tr>
+    <tr *ngFor="let obj of model">
+      <td align="center">{{obj[0]}}</td>
+      <td align="center">{{obj[1]}}</td>
+      <td align="center">{{obj[2]}}</td>
+      <td align="center">{{obj[3]}}</td>
+      <td align="center">{{obj[5]}}</td>
+      <ng-container>
+        <td align="center" *ngIf="obj[7]==='1'">Admin</td>
+        <td align="center" *ngIf="obj[7]==='2'">Read-Write</td>
+        <td align="center" *ngIf="obj[7]==='3'">Read</td>
+      </ng-container>
+
+
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,48 @@
+<app-user></app-user>
+<br>
+<form [formGroup]="updateForm" class="example-form">
+
+    <div fxLayoutAlign="center center">
+        <table border="1" class="a">
+            <mat-form-field fxFlexFill fxLayoutAlign="center center">
+                <mat-label class="color">ID</mat-label>
+                <input matInput type="number" formControlName="id">
+            </mat-form-field>
+            <mat-form-field fxFlexFill fxLayoutAlign="center center">
+                <mat-label class="color">First name</mat-label>
+                <input matInput formControlName="first_name">
+            </mat-form-field>
+            <mat-form-field fxFlexFill fxLayoutAlign="center center">
+                <mat-label>Last name</mat-label>
+                <input matInput formControlName="last_name">
+            </mat-form-field>
+            <mat-form-field fxFlexFill fxLayoutAlign="center center">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email">
+            </mat-form-field>
+            <mat-form-field fxFlexFill fxLayoutAlign="center center">
+                <mat-label>Role</mat-label>
+                <input matInput type="text" placeholder="Eg:admin/read/readwrite" formControlName="role">
+            </mat-form-field>
+            <mat-form-field fxFlexFill fxLayoutAlign="center center">
+                <mat-label>Contact</mat-label>
+                <input matInput type="number" formControlName="contact_number">
+            </mat-form-field>
+
+            <mat-form-field fxFlexFill fxLayoutAlign="center center">
+                <mat-label>Password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <br>
+            <div fxFlexFill fxLayoutAlign="center center">
+                <button mat-raised-button color="accent" (click)="submitForm()">Update</button>
+            </div>
+        </table>
+    </div>
+
+
+</form>

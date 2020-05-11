@@ -1,0 +1,40 @@
+<app-group></app-group>
+
+<div class="body">
+    <div fxLayoutAlign='center center'>
+
+        <form [formGroup]="searchGroup">
+            <b>
+                <h1>Search Groups</h1>
+            </b><br>
+            <div fxLayoutGap="10px">
+                <input type="text" formControlName="gid" placeholder="Enter group Id">
+                <button (click)="getSingle()">Get All User In Group</button><br><br>
+                <button (click)="getMultiple()">Get All Groups</button>
+                <button [routerLink]="['/group']">Clear All</button>
+
+                <br><br>
+
+            </div>
+        </form>
+    </div><br><br>
+    <table border="1" align="left" class="a">
+        <tr>
+            <td align="center">USER ID</td>
+        </tr>
+        <tr *ngFor="let obj of dataSource">
+            <td align="center">{{obj}}</td>
+        </tr>
+    </table>
+    <table border="1" align="right" class="b">
+        <tr>
+            <td align="center">GROUP ID</td>
+            <td align="center">GROUP NAME</td>
+        </tr>
+        <tr *ngFor="let obj of model">
+            <td align="center">{{obj[0]}}</td>
+            <td align="center">{{obj[1]}}</td>
+        </tr>
+    </table>
+
+</div>

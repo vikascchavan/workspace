@@ -1,0 +1,33 @@
+<app-group></app-group>
+<div fxFlexFill>
+    <form [formGroup]="deleteGroup">
+        <div>
+            <table border=" 1" class="a"><br><br>
+                <mat-form-field fxFlexFill fxLayoutAlign="center center">
+                    <mat-label class="color">group Id</mat-label>
+                    <input matInput type="number" placeholder="Group Name" formControlName='id'>
+                </mat-form-field><br><br>
+
+                <div fxFlexFill fxLayoutAlign="center center">
+                    <button mat-raised-button color="accent" (click)="deleteGroupForm()">Delete Group</button>
+                </div><br><br>
+            </table>
+        </div>
+    </form>
+    <form [formGroup]="deleteUser">
+        <table border=" 1" class="b"><br><br>
+            <mat-form-field fxFlexFill fxLayoutAlign="center center">
+                <mat-label class="color">User Id</mat-label>
+                <input matInput type="number" placeholder="Group Name" formControlName='u_id'>
+            </mat-form-field>
+            <mat-form-field fxFlexFill fxLayoutAlign="center center">
+                <mat-label class="color">Group Id</mat-label>
+                <input matInput type="number" placeholder="Group Name" formControlName='g_id'>
+            </mat-form-field><br><br>
+
+            <div fxFlexFill fxLayoutAlign="center center">
+                <button mat-raised-button color="accent" (click)="deleteUserForm()">Delete User From Group</button>
+            </div><br><br>
+        </table>
+    </form>
+</div>

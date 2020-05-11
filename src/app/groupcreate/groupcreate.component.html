@@ -1,0 +1,18 @@
+<app-group></app-group>
+
+<div fxFlexFill>
+    <form [formGroup]="createGroup">
+        <div fxFlexFill fxLayoutAlign="center center">
+            <table border="1" class="a">
+                <mat-form-field fxFlexFill fxLayoutAlign="center center">
+                    <mat-label class="color">Group Name</mat-label>
+                    <input matInput type="text" placeholder="Group Name" formControlName='gname'>
+                </mat-form-field>
+                <div fxFlexFill fxLayoutAlign="center center">
+                    <button mat-raised-button color="accent" (click)="submitForm()">Create</button>
+                </div>
+            </table>
+        </div>
+    </form>
+
+</div>

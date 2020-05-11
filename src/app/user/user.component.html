@@ -1,0 +1,16 @@
+<app-main></app-main>
+<!-- <mat-toolbar color="success">
+  <div fxLayout="row" fxLayoutGap='40px'>
+    <a mat-raised-button color="accent" [routerLink]="['/usercreate']">Create User</a>
+    <a mat-raised-button color="accent" [routerLink]="['/userdelete']">Delete User</a>
+    <a mat-raised-button color="accent" [routerLink]="['/userupdate']">Modify User Details</a>
+    <a mat-raised-button color="accent" [routerLink]="['/usersearch']">Search User</a>
+</div>
+</mat-toolbar> -->
+<button mat-raised-button [matMenuTriggerFor]="menu">Operation</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item [routerLink]="['/usercreate']" color="accent">Create User</button><br>
+  <button mat-menu-item [routerLink]="['/userdelete']" color="accent">Delete User</button><br>
+  <button mat-menu-item [routerLink]="['/userupdate']" color="accent">Update User</button><br>
+  <button mat-menu-item  [routerLink]="['/usersearch']" color="accent">Search User</button><br>
+</mat-menu>
